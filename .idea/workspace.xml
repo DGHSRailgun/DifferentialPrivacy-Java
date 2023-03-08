@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Merged">
+    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="dev">
+      <change afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/libdifferentialprivacy-export-lib-native-header.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/libdifferentialprivacy-export-lib-src.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/libdifferentialprivacy-export-lib.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +65,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/liyuanshi/IdeaProjects/DifferentialPrivacy-Java",
+    "last_opened_file_path": "/Users/liyuanshi/IdeaProjects/DifferentialPrivacy-Java/libs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,11 +86,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Scenarios" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Entity" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/example/Entity/Utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example" />
@@ -157,6 +165,7 @@
       <workItem from="1678242547688" duration="1888000" />
       <workItem from="1678287030948" duration="4696000" />
       <workItem from="1678291940902" duration="1562000" />
+      <workItem from="1678293507152" duration="2503000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1678293230242</created>
@@ -172,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678293238435</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dev">
+      <created>1678293551942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678293551942</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +208,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev" />
   </component>
 </project>
