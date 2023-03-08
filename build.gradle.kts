@@ -21,7 +21,6 @@ repositories {
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
-//    implementation(fileTree(mapOf("dir" to "/Users/liyuanshi/DPProjects/differential-privacy/java/bazel-bin", "include" to listOf("*.jar"))))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("com.google.guava:guava:31.1-jre")
     implementation("com.google.protobuf:protobuf-java:4.0.0-rc-2")
