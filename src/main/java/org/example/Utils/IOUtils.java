@@ -32,6 +32,7 @@ public class IOUtils {
           .toFormatter(Locale.ENGLISH);
   public static final String CSV_HOUR_COUNT_WRITE_TEMPLATE = "%d,%d\n";
   public static final String CSV_DAY_COUNT_WRITE_TEMPLATE = "%s,%d\n";
+  public static final String CSV_DAY_VARIANCE_WRITE_TEMPLATE = "%s,%f\n";
 
   public IOUtils() {}
 
@@ -114,4 +115,14 @@ public class IOUtils {
       throw new IllegalStateException(e);
     }
   }
+
+  public static void writeVariancesPerDayOfWeek(EnumMap<DayOfWeek, Double> variances, String file) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+      variances.forEach(
+              (day, variance) -> pw.write(String.format(CSV_DAY_VARIANCE_WRITE_TEMPLATE, day.name(), variance)));
+    } catch (IOException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
 }

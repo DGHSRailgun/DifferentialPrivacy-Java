@@ -1,6 +1,7 @@
 package org.example.Scenarios;
 
 import com.google.common.collect.ImmutableSortedMap;
+import com.google.privacy.differentialprivacy.BoundedVariance;
 import com.google.privacy.differentialprivacy.Count;
 import org.example.Entity.Visit;
 import org.example.Utils.IOUtils;
@@ -78,8 +79,7 @@ public class CountVisitsPerHour {
           .build();
       dpCounts.put(i, dpCount);
 
-
-    }
+  }
 
     // Go through all visits and update Counts at the corresponding hours.
     visits.forEach(v -> dpCounts.get(v.entryTime().getHour()).increment());

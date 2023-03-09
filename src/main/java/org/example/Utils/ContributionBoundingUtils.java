@@ -16,8 +16,6 @@ public class ContributionBoundingUtils {
   /**
    * @return {@link VisitsForWeek} containing the restaurant visits where the number of days
    * contributed by a single visitor is limited to {@code maxContributedDays}.
-   *
-   * TODO: Generalize the logic to be used for different partition keys.
    */
   public static VisitsForWeek boundContributedDays(VisitsForWeek visits, int maxContributedDays) {
     Map<String, Set<DayOfWeek>> boundedVisitorDays = new HashMap<>();

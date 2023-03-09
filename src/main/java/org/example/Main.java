@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.Scenarios.CountVisitsPerDay;
-import org.example.Scenarios.CountVisitsPerHour;
-import org.example.Scenarios.SumRevenuePerDay;
-import org.example.Scenarios.SumRevenuePerDayWithPreAggregation;
+import org.example.Scenarios.*;
 
 import java.util.Arrays;
 
@@ -31,6 +28,9 @@ public class Main {
       case SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION:
         SumRevenuePerDayWithPreAggregation.run();
         break;
+      case CAL_VARIANCE_PER_DAY:
+        CalculateBoundedVariance.run();
+        break;
     }
   }
 
@@ -40,6 +40,7 @@ public class Main {
     COUNT_VISITS_PER_HOUR,
     COUNT_VISITS_PER_DAY,
     SUM_REVENUE_PER_DAY,
-    SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION
+    SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION,
+    CAL_VARIANCE_PER_DAY
   }
 }
