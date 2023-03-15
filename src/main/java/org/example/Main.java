@@ -31,6 +31,8 @@ public class Main {
       case CAL_VARIANCE_PER_DAY:
         CalculateBoundedVariance.run();
         break;
+      case CAL_MEAN_PER_DAY:
+        CalculateBoundedMean.run();
     }
   }
 
@@ -41,6 +43,7 @@ public class Main {
     COUNT_VISITS_PER_DAY,
     SUM_REVENUE_PER_DAY,
     SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION,
-    CAL_VARIANCE_PER_DAY
+    CAL_VARIANCE_PER_DAY,
+    CAL_MEAN_PER_DAY
   }
 }
