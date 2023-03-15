@@ -24,5 +24,19 @@ public class Calculator {
         return val/ visits.size();
     }
 
+    public static double calSpentMean(Collection<Visit> visits) {
+        double sum = 0.0;
+        double ave = 0.0;
+
+        for(Visit v: visits) {
+            sum += v.eurosSpent();
+        }
+
+        ave = sum / visits.size();
+
+        return ave;
+
+    }
+
 
 }

@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="update bounded variance">
-      <change afterPath="$PROJECT_DIR$/non_private_counts_per_hour.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/non_private_sums_per_day.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/private_counts_per_hour.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/private_sums_per_day.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" afterDir="false" />
+    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="build Bounded Mean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_bounded_variance_per_day.csv" beforeDir="false" afterPath="$PROJECT_DIR$/private_bounded_variance_per_day.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/Calculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +179,7 @@
       <workItem from="1678478265811" duration="2335000" />
       <workItem from="1678834931146" duration="3631000" />
       <workItem from="1678843394854" duration="216000" />
+      <workItem from="1678843621247" duration="622000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1678293230242</created>
@@ -226,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678405486536</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="build Bounded Mean">
+      <created>1678843681932</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678843681932</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +253,7 @@
     <MESSAGE value="dev" />
     <MESSAGE value="update dependencies" />
     <MESSAGE value="update bounded variance" />
-    <option name="LAST_COMMIT_MESSAGE" value="update bounded variance" />
+    <MESSAGE value="build Bounded Mean" />
+    <option name="LAST_COMMIT_MESSAGE" value="build Bounded Mean" />
   </component>
 </project>
