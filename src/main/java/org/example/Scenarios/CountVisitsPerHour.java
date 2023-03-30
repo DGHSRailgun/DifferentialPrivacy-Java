@@ -38,6 +38,7 @@ public class CountVisitsPerHour {
 
     IOUtils.writeCountsPerHourOfDay(nonPrivateCounts, NON_PRIVATE_OUTPUT);
     IOUtils.writeCountsPerHourOfDay(privateCounts, PRIVATE_OUTPUT);
+
   }
 
   /**
@@ -73,12 +74,13 @@ public class CountVisitsPerHour {
     // one Count is created for every work hour.
     Map<Integer, Count> dpCounts = new HashMap<>();
     for (int i = OPENING_HOUR; i <= CLOSING_HOUR; i++) {
+
       Count dpCount = Count.builder()
           .epsilon(LN_3)
           .maxPartitionsContributed(1)
           .build();
-      dpCounts.put(i, dpCount);
 
+      dpCounts.put(i, dpCount);
   }
 
     // Go through all visits and update Counts at the corresponding hours.

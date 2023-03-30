@@ -1,6 +1,7 @@
 package org.example.Utils;
 
 import com.google.common.base.Splitter;
+
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
 import org.example.Entity.Visit;
@@ -32,6 +33,7 @@ public class IOUtils {
           .toFormatter(Locale.ENGLISH);
   public static final String CSV_HOUR_COUNT_WRITE_TEMPLATE = "%d,%d\n";
   public static final String CSV_DAY_COUNT_WRITE_TEMPLATE = "%s,%d\n";
+  public static final String CSV_DAY_MEAN_WRITE_TEMPLATE = "%s,%f\n";
   public static final String CSV_DAY_VARIANCE_WRITE_TEMPLATE = "%s,%f\n";
 
   public IOUtils() {}
@@ -105,6 +107,7 @@ public class IOUtils {
     } catch (IOException e) {
       throw new IllegalStateException(e);
     }
+
   }
 
   public static void writeCountsPerDayOfWeek(EnumMap<DayOfWeek, Integer> counts, String file) {
@@ -124,5 +127,16 @@ public class IOUtils {
       throw new IllegalStateException(e);
     }
   }
+
+  public static void writeMeanPerDayOfWeek(EnumMap<DayOfWeek, Double> mean, String file) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+      mean.forEach(
+              (day, variance) -> pw.write(String.format(CSV_DAY_MEAN_WRITE_TEMPLATE, day.name(), variance)));
+    } catch (IOException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
+
 
 }
