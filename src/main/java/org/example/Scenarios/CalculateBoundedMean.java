@@ -30,10 +30,8 @@ public class CalculateBoundedMean {
         EnumMap<DayOfWeek, Double> nonPrivateMean = getNonPrivateMean(visitsForWeek);
         EnumMap<DayOfWeek, Double> privateMean = getPrivateMean(visitsForWeek);
 
-
-
-        IOUtils.writeVariancesPerDayOfWeek(nonPrivateMean, NON_PRIVATE_OUTPUT);
-        IOUtils.writeVariancesPerDayOfWeek(privateMean, PRIVATE_OUTPUT);
+        IOUtils.writeMeanPerDayOfWeek(nonPrivateMean, NON_PRIVATE_OUTPUT);
+        IOUtils.writeMeanPerDayOfWeek(privateMean, PRIVATE_OUTPUT);
     }
 
     private static EnumMap<DayOfWeek, Double> getNonPrivateMean(VisitsForWeek visits) {
@@ -63,6 +61,7 @@ public class CalculateBoundedMean {
                 dpMean.addEntry(v.eurosSpent());
             }
 
+            dpMean.computeConfidenceInterval(0.05);
             privateMeanPerDay.put(d, dpMean.computeResult());
         }
 

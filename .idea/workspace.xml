@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="build Bounded Mean">
+    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Add calculating Bounded Mean values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/non_private_bounded_mean_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/non_private_bounded_variance_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/non_private_counts_per_hour.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/non_private_sums_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_bounded_variance_mean_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_bounded_variance_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_counts_per_hour.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_sums_per_day.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,17 +107,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libs" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/DP" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Scenarios" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Entity" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/example" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example" />
       <recent name="org.example.Schedule" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="Shell Script.gradlew">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="DPRestuartant.main" />
@@ -149,9 +161,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Main" />
         <item itemvalue="Shell Script.gradlew" />
-        <item itemvalue="应用程序.Main" />
         <item itemvalue="Shell Script.gradlew" />
         <item itemvalue="Shell Script.gradlew" />
       </list>
@@ -179,7 +189,15 @@
       <workItem from="1678478265811" duration="2335000" />
       <workItem from="1678834931146" duration="3631000" />
       <workItem from="1678843394854" duration="216000" />
-      <workItem from="1678843621247" duration="622000" />
+      <workItem from="1678843621247" duration="950000" />
+      <workItem from="1680050525332" duration="313000" />
+      <workItem from="1680140571494" duration="1340000" />
+      <workItem from="1680185214542" duration="3718000" />
+      <workItem from="1680189986443" duration="717000" />
+      <workItem from="1680190709960" duration="353000" />
+      <workItem from="1680191067835" duration="766000" />
+      <workItem from="1680191844001" duration="632000" />
+      <workItem from="1680192482244" duration="2549000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1678293230242</created>
@@ -230,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678843681932</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add calculating Bounded Mean values">
+      <created>1678844429888</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678844429888</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +279,7 @@
     <MESSAGE value="update dependencies" />
     <MESSAGE value="update bounded variance" />
     <MESSAGE value="build Bounded Mean" />
-    <option name="LAST_COMMIT_MESSAGE" value="build Bounded Mean" />
+    <MESSAGE value="Add calculating Bounded Mean values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add calculating Bounded Mean values" />
   </component>
 </project>
