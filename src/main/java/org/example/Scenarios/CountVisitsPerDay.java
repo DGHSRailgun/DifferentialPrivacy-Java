@@ -1,5 +1,6 @@
 package org.example.Scenarios;
 
+import com.google.common.base.Stopwatch;
 import com.google.privacy.differentialprivacy.Count;
 import org.example.Entity.VisitsForWeek;
 import org.example.Utils.ContributionBoundingUtils;
@@ -9,6 +10,7 @@ import org.example.Utils.InputFilePath;
 import java.time.DayOfWeek;
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Reads weekly visits from {@link InputFilePath#WEEK_STATISTICS}. Calculates non-private
@@ -55,6 +57,9 @@ public class CountVisitsPerDay {
 
   /** Returns total anonymized count of visits for each day of the week. */
   private static EnumMap<DayOfWeek, Integer> getPrivateCounts(VisitsForWeek visits) {
+    //Strat timer
+    Stopwatch watch = Stopwatch.createStarted();
+
     EnumMap<DayOfWeek, Integer> privateCountsPerDay = new EnumMap<>(DayOfWeek.class);
 
     // Pre-process the data set: limit the number of days contributed by a visitor to
@@ -78,6 +83,10 @@ public class CountVisitsPerDay {
       dpCount.incrementBy(boundedVisits.getVisitsForDay(d).size());
       privateCountsPerDay.put(d, (int) dpCount.computeResult());
     });
+
+    //Write timer to file
+    IOUtils.WriteAddNoiseTimer(String.valueOf(watch.stop().elapsed(TimeUnit.MILLISECONDS)), "COUNT_VISITS_PER_DAY");
+
 
     return privateCountsPerDay;
   }

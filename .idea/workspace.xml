@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Add calculating Bounded Mean values">
+    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Add timer for computing confidence interval">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateStandardDeviation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_bounded_mean_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_bounded_variance_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_counts_per_hour.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_sums_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_bounded_variance_mean_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_bounded_variance_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_counts_per_hour.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_sums_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedVariance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedVariance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerDay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDayWithPreAggregation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDayWithPreAggregation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +195,15 @@
       <workItem from="1680190709960" duration="353000" />
       <workItem from="1680191067835" duration="766000" />
       <workItem from="1680191844001" duration="632000" />
-      <workItem from="1680192482244" duration="2549000" />
+      <workItem from="1680192482244" duration="4160000" />
+      <workItem from="1680199694910" duration="407000" />
+      <workItem from="1680200106984" duration="425000" />
+      <workItem from="1680200538316" duration="273000" />
+      <workItem from="1680200816763" duration="1457000" />
+      <workItem from="1680202281103" duration="310000" />
+      <workItem from="1680202596855" duration="114000" />
+      <workItem from="1680202715255" duration="1319000" />
+      <workItem from="1680204041893" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1678293230242</created>
@@ -255,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678844429888</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add timer for computing confidence interval">
+      <created>1680195110544</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680195110544</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +293,7 @@
     <MESSAGE value="update bounded variance" />
     <MESSAGE value="build Bounded Mean" />
     <MESSAGE value="Add calculating Bounded Mean values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add calculating Bounded Mean values" />
+    <MESSAGE value="Add timer for computing confidence interval" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add timer for computing confidence interval" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 package org.example.Scenarios;
 
+import com.google.common.base.Stopwatch;
 import com.google.privacy.differentialprivacy.BoundedMean;
 import org.example.Entity.Visit;
 import org.example.Entity.VisitsForWeek;
@@ -11,6 +12,7 @@ import org.example.Utils.InputFilePath;
 import java.time.DayOfWeek;
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.concurrent.TimeUnit;
 
 public class CalculateBoundedMean {
 
@@ -42,6 +44,9 @@ public class CalculateBoundedMean {
     }
 
     private static EnumMap<DayOfWeek, Double> getPrivateMean(VisitsForWeek visits) {
+        //Strat timer
+        Stopwatch watch = Stopwatch.createStarted();
+
         EnumMap<DayOfWeek, Double> privateMeanPerDay = new EnumMap<>(DayOfWeek.class);
 
         VisitsForWeek boundedVisits =
@@ -64,6 +69,9 @@ public class CalculateBoundedMean {
             dpMean.computeConfidenceInterval(0.05);
             privateMeanPerDay.put(d, dpMean.computeResult());
         }
+
+        //Write timer to file
+        IOUtils.WriteAddNoiseTimer(String.valueOf(watch.stop().elapsed(TimeUnit.MILLISECONDS)), "CAL_MEAN_PER_DAY");
 
         return privateMeanPerDay;
     }

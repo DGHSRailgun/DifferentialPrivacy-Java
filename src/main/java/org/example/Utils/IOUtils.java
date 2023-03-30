@@ -35,6 +35,11 @@ public class IOUtils {
   public static final String CSV_DAY_COUNT_WRITE_TEMPLATE = "%s,%d\n";
   public static final String CSV_DAY_MEAN_WRITE_TEMPLATE = "%s,%f\n";
   public static final String CSV_DAY_VARIANCE_WRITE_TEMPLATE = "%s,%f\n";
+  public static final String CSV_DAY_STANDARD_DEVIATION_WRITE_TEMPLATE = "%s,%f\n";
+
+  public static final String StringFormat = "%s,%s\n";
+
+  public static final String FileName = "RUNNINNG_TIME.csv";
 
   public IOUtils() {}
 
@@ -128,11 +133,29 @@ public class IOUtils {
     }
   }
 
+  public static void writeStandardDeviationPerDayOfWeek(EnumMap<DayOfWeek, Double> variances, String file) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+      variances.forEach(
+              (day, variance) -> pw.write(String.format(CSV_DAY_STANDARD_DEVIATION_WRITE_TEMPLATE, day.name(), variance)));
+    } catch (IOException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
   public static void writeMeanPerDayOfWeek(EnumMap<DayOfWeek, Double> mean, String file) {
     try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
       mean.forEach(
               (day, variance) -> pw.write(String.format(CSV_DAY_MEAN_WRITE_TEMPLATE, day.name(), variance)));
     } catch (IOException e) {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  public static void WriteAddNoiseTimer(String time, String scenario) {
+    try(PrintWriter pw = new PrintWriter(new File(FileName), UTF_8.name())){
+      System.out.println(time);
+      pw.write(String.format(StringFormat, scenario, time + " ms"));
+    }catch (IOException e){
       throw new IllegalStateException(e);
     }
   }
