@@ -1,10 +1,6 @@
 package org.example.Scenarios;
 
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.ImmutableSortedMap;
-import com.google.privacy.differentialprivacy.BoundedSum;
-import com.google.privacy.differentialprivacy.BoundedVariance;
-import com.google.privacy.differentialprivacy.Count;
 import com.google.privacy.differentialprivacy.StandardDeviation;
 import org.example.Entity.Visit;
 import org.example.Entity.VisitsForWeek;
@@ -27,9 +23,9 @@ public class CalculateStandardDeviation {
 
     private static final int MAX_CONTRIBUTED_DAYS = 4;
 
-    private static final int MAX_CONTRIBUTED_TIMES_PER_DAY = 1;
+    private static final int MAX_CONTRIBUTED_TIMES_PER_DAY = 3;
     private static final int MIN_EUROS_SPENT = 0;
-    private static final int MAX_EUROS_SPENT = 50;
+    private static final int MAX_EUROS_SPENT = 350;
 
     private CalculateStandardDeviation() {}
 

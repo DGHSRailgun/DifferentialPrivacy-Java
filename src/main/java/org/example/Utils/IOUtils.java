@@ -39,7 +39,7 @@ public class IOUtils {
 
   public static final String StringFormat = "%s,%s\n";
 
-  public static final String FileName = "RUNNINNG_TIME.csv";
+  public static final String FileName = "RUNNING_TIME.csv";
 
   public IOUtils() {}
 
@@ -74,17 +74,14 @@ public class IOUtils {
     // element 2
     int timeSpent = Integer.parseInt(splitVisit.next());
     // element 3
-    int moneySpent = Integer.parseInt(splitVisit.next());
+    Double moneySpent = Double.parseDouble(splitVisit.next());
     // element 4
     DayOfWeek day = DayOfWeek.of(Integer.parseInt(splitVisit.next()));
 
     return Visit.create(visitorId, timeEntered, timeSpent, moneySpent, day);
   }
 
-  /**
-   * Reads daily visitors' data. Assumes that the input file is a .csv file of format "visitorId,
-   * entryTime, minutesSpent, moneySpent, day".
-   */
+
   public static VisitsForWeek readWeeklyVisits(String file) {
     VisitsForWeek result = new VisitsForWeek();
 
@@ -106,7 +103,7 @@ public class IOUtils {
   }
 
   public static void writeCountsPerHourOfDay(Map<Integer, Integer> counts, String file) {
-    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8)) {
       counts.forEach((
           hour, count) -> pw.write(String.format(CSV_HOUR_COUNT_WRITE_TEMPLATE, hour, count)));
     } catch (IOException e) {
@@ -116,7 +113,7 @@ public class IOUtils {
   }
 
   public static void writeCountsPerDayOfWeek(EnumMap<DayOfWeek, Integer> counts, String file) {
-    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8)) {
       counts.forEach(
           (day, count) -> pw.write(String.format(CSV_DAY_COUNT_WRITE_TEMPLATE, day.name(), count)));
     } catch (IOException e) {
@@ -125,7 +122,7 @@ public class IOUtils {
   }
 
   public static void writeVariancesPerDayOfWeek(EnumMap<DayOfWeek, Double> variances, String file) {
-    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8)) {
       variances.forEach(
               (day, variance) -> pw.write(String.format(CSV_DAY_VARIANCE_WRITE_TEMPLATE, day.name(), variance)));
     } catch (IOException e) {
@@ -134,7 +131,7 @@ public class IOUtils {
   }
 
   public static void writeStandardDeviationPerDayOfWeek(EnumMap<DayOfWeek, Double> variances, String file) {
-    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8)) {
       variances.forEach(
               (day, variance) -> pw.write(String.format(CSV_DAY_STANDARD_DEVIATION_WRITE_TEMPLATE, day.name(), variance)));
     } catch (IOException e) {
@@ -143,7 +140,7 @@ public class IOUtils {
   }
 
   public static void writeMeanPerDayOfWeek(EnumMap<DayOfWeek, Double> mean, String file) {
-    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8.name())) {
+    try (PrintWriter pw = new PrintWriter(new File(file), UTF_8)) {
       mean.forEach(
               (day, variance) -> pw.write(String.format(CSV_DAY_MEAN_WRITE_TEMPLATE, day.name(), variance)));
     } catch (IOException e) {
@@ -152,8 +149,7 @@ public class IOUtils {
   }
 
   public static void WriteAddNoiseTimer(String time, String scenario) {
-    try(PrintWriter pw = new PrintWriter(new File(FileName), UTF_8.name())){
-      System.out.println(time);
+    try(PrintWriter pw = new PrintWriter(new File(FileName), UTF_8)){
       pw.write(String.format(StringFormat, scenario, time + " ms"));
     }catch (IOException e){
       throw new IllegalStateException(e);

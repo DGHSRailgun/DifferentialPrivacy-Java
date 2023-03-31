@@ -33,8 +33,13 @@ public class Main {
         break;
       case CAL_MEAN_PER_DAY:
         CalculateBoundedMean.run();
+        break;
       case CAL_STANDARD_DEVIATION:
         CalculateStandardDeviation.run();
+        break;
+      case CAL_BOUNDED_QUANTILES:
+        CalculateBoundedQuantiles.run();
+        break;
     }
   }
 
@@ -47,6 +52,7 @@ public class Main {
     SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION,
     CAL_VARIANCE_PER_DAY,
     CAL_MEAN_PER_DAY,
-    CAL_STANDARD_DEVIATION
+    CAL_STANDARD_DEVIATION,
+    CAL_BOUNDED_QUANTILES
   }
 }

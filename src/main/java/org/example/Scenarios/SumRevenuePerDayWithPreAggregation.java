@@ -83,18 +83,18 @@ public class SumRevenuePerDayWithPreAggregation {
               .build();
 
       // For each visitor, pre-aggregate their spending for the day.
-      Map<String, Integer> visitorToDaySpending = new HashMap<>();
+      Map<String, Double> visitorToDaySpending = new HashMap<>();
       for (Visit v : boundedVisits.getVisitsForDay(d)) {
         String visitorId = v.visitorId();
         if (visitorToDaySpending.containsKey(visitorId)) {
-          int newAmount = visitorToDaySpending.get(visitorId) + v.eurosSpent();
+          Double newAmount = visitorToDaySpending.get(visitorId) + v.eurosSpent();
           visitorToDaySpending.put(visitorId, newAmount);
         } else {
           visitorToDaySpending.put(visitorId, v.eurosSpent());
         }
       }
 
-      for (Integer visitorSpending : visitorToDaySpending.values()) {
+      for (Double visitorSpending : visitorToDaySpending.values()) {
         dpSum.addEntry(visitorSpending);
       }
 

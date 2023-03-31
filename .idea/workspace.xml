@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Add timer for computing confidence interval">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateStandardDeviation.java" afterDir="false" />
+    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Finished Timer and Standard Deviation">
+      <change afterPath="$PROJECT_DIR$/RUNNING_TIME.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/non_private_bounded_quantiles.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/private_bounded_quantiles.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedQuantiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RUNNINNG_TIME.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/non_private_standard_deviation_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_standard_deviation_per_day.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Entity/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Entity/Visit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedVariance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedVariance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateStandardDeviation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateStandardDeviation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDayWithPreAggregation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/SumRevenuePerDayWithPreAggregation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/day_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/day_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/week_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/week_data.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +93,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/liyuanshi/IdeaProjects/DifferentialPrivacy-Java/libs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/liyuanshi/IdeaProjects/DifferentialPrivacy-Java/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -104,9 +108,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/DP" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Scenarios" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Entity" />
     </key>
@@ -203,7 +207,10 @@
       <workItem from="1680202281103" duration="310000" />
       <workItem from="1680202596855" duration="114000" />
       <workItem from="1680202715255" duration="1319000" />
-      <workItem from="1680204041893" duration="97000" />
+      <workItem from="1680204041893" duration="195000" />
+      <workItem from="1680228374688" duration="1644000" />
+      <workItem from="1680273226944" duration="4176000" />
+      <workItem from="1680288201148" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1678293230242</created>
@@ -268,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680195110544</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finished Timer and Standard Deviation">
+      <created>1680204219706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680204219706</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +308,7 @@
     <MESSAGE value="build Bounded Mean" />
     <MESSAGE value="Add calculating Bounded Mean values" />
     <MESSAGE value="Add timer for computing confidence interval" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add timer for computing confidence interval" />
+    <MESSAGE value="Finished Timer and Standard Deviation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Timer and Standard Deviation" />
   </component>
 </project>
