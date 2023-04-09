@@ -26,6 +26,14 @@ dependencies {
     implementation("com.google.protobuf:protobuf-java:4.0.0-rc-2")
     compileOnly("com.google.auto.value:auto-value-annotations:1.10.1")
     annotationProcessor("com.google.auto.value:auto-value:1.10.1")
+    implementation("org.mongodb:mongo-java-driver:3.12.11")
+    compileOnly("org.projectlombok:lombok:1.18.24")
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    implementation("org.apache.logging.log4j:log4j-core:2.20.0")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
+// https://mvnrepository.com/artifact/com.opencsv/opencsv
+    implementation("com.opencsv:opencsv:5.7.1")
+
 
 }
 

@@ -62,8 +62,8 @@ public class CalculateBoundedQuantiles {
                             .maxContributionsPerPartition(MAX_CONTRIBUTED_TIMES_PER_DAY)
                             .lower(MIN_EUROS_SPENT)
                             .upper(MAX_EUROS_SPENT)
-                            .treeHeight(5)
-                            .branchingFactor(2)
+                            .treeHeight(10)
+                            .branchingFactor(10)
                             .build();
 
             for (Visit v : boundedVisits.getVisitsForDay(d)) {

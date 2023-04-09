@@ -1,16 +1,22 @@
 package org.example;
 
+import org.example.App.DPApp;
 import org.example.Scenarios.*;
 
 import java.util.Arrays;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception{
     if (args == null || args.length == 0) {
-      throw new IllegalArgumentException(
-          "The scenario should be set as a first argument. "
-              + "Accepted values: "
-              + Arrays.toString(Scenario.values()));
+//      throw new IllegalArgumentException(
+//          "The scenario should be set as a first argument. "
+//              + "Accepted values: "
+//              + Arrays.toString(Scenario.values()));
+
+      DPApp app = new DPApp();
+      app.buildConnection();
+      app.runApp();
+
     }
 
     Scenario scenario = Scenario.valueOf(args[0]);
