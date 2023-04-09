@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Add calculating Bounded Mean values">
+    <list default="true" id="59d18eed-47f3-4e87-b28c-87c969b79c61" name="变更" comment="Add quantiles tree">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App/DPApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Exception/ClientNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Exception/DatabaseNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/DBConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-docs.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project-src.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/differentialprivacy-export-project.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_bounded_mean_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_bounded_variance_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_counts_per_hour.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_private_sums_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_bounded_variance_mean_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_bounded_variance_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_counts_per_hour.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_sums_per_day.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedMean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CountVisitsPerHour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/IOUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RUNNING_TIME.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RUNNING_TIME.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/non_private_bounded_quantiles.csv" beforeDir="false" afterPath="$PROJECT_DIR$/non_private_bounded_quantiles.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_bounded_quantiles.csv" beforeDir="false" afterPath="$PROJECT_DIR$/private_bounded_quantiles.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedQuantiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scenarios/CalculateBoundedQuantiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,42 +78,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/liyuanshi/IdeaProjects/DifferentialPrivacy-Java/libs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/liyuanshi/IdeaProjects/DifferentialPrivacy-Java/src/main/java/org/example",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/example" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/DP" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/Scenarios" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/example/Entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example" />
       <recent name="org.example.Schedule" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.gradlew">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="DPRestuartant.main" />
@@ -197,7 +193,25 @@
       <workItem from="1680190709960" duration="353000" />
       <workItem from="1680191067835" duration="766000" />
       <workItem from="1680191844001" duration="632000" />
-      <workItem from="1680192482244" duration="2549000" />
+      <workItem from="1680192482244" duration="4160000" />
+      <workItem from="1680199694910" duration="407000" />
+      <workItem from="1680200106984" duration="425000" />
+      <workItem from="1680200538316" duration="273000" />
+      <workItem from="1680200816763" duration="1457000" />
+      <workItem from="1680202281103" duration="310000" />
+      <workItem from="1680202596855" duration="114000" />
+      <workItem from="1680202715255" duration="1319000" />
+      <workItem from="1680204041893" duration="195000" />
+      <workItem from="1680228374688" duration="1644000" />
+      <workItem from="1680273226944" duration="4176000" />
+      <workItem from="1680288201148" duration="5000" />
+      <workItem from="1680288208545" duration="104000" />
+      <workItem from="1680288325290" duration="160000" />
+      <workItem from="1680288493180" duration="184000" />
+      <workItem from="1680288779243" duration="18000" />
+      <workItem from="1680288802683" duration="2114000" />
+      <workItem from="1681049885895" duration="92000" />
+      <workItem from="1681053584480" duration="4217000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1678293230242</created>
@@ -255,7 +269,28 @@
       <option name="project" value="LOCAL" />
       <updated>1678844429888</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add timer for computing confidence interval">
+      <created>1680195110544</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680195110544</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Finished Timer and Standard Deviation">
+      <created>1680204219706</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680204219706</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add quantiles tree">
+      <created>1680288254654</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680288254654</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +315,9 @@
     <MESSAGE value="update bounded variance" />
     <MESSAGE value="build Bounded Mean" />
     <MESSAGE value="Add calculating Bounded Mean values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add calculating Bounded Mean values" />
+    <MESSAGE value="Add timer for computing confidence interval" />
+    <MESSAGE value="Finished Timer and Standard Deviation" />
+    <MESSAGE value="Add quantiles tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add quantiles tree" />
   </component>
 </project>

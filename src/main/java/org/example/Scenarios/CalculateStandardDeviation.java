@@ -1,10 +1,7 @@
 package org.example.Scenarios;
 
 import com.google.common.base.Stopwatch;
-import com.google.common.collect.ImmutableSortedMap;
-import com.google.privacy.differentialprivacy.BoundedSum;
-import com.google.privacy.differentialprivacy.BoundedVariance;
-import com.google.privacy.differentialprivacy.Count;
+import com.google.privacy.differentialprivacy.StandardDeviation;
 import org.example.Entity.Visit;
 import org.example.Entity.VisitsForWeek;
 import org.example.Utils.Calculator;
@@ -17,41 +14,41 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
-public class CalculateBoundedVariance {
+public class CalculateStandardDeviation {
 
-    private static final String NON_PRIVATE_OUTPUT = "non_private_bounded_variance_per_day.csv";
-    private static final String PRIVATE_OUTPUT = "private_bounded_variance_per_day.csv";
+    private static final String NON_PRIVATE_OUTPUT = "non_private_standard_deviation_per_day.csv";
+    private static final String PRIVATE_OUTPUT = "private_standard_deviation_per_day.csv";
 
     private static final double LN_3 = Math.log(3);
 
     private static final int MAX_CONTRIBUTED_DAYS = 4;
 
-    private static final int MAX_CONTRIBUTED_TIMES_PER_DAY = 1;
+    private static final int MAX_CONTRIBUTED_TIMES_PER_DAY = 3;
     private static final int MIN_EUROS_SPENT = 0;
-    private static final int MAX_EUROS_SPENT = 50;
+    private static final int MAX_EUROS_SPENT = 350;
 
-    private CalculateBoundedVariance() {}
+    private CalculateStandardDeviation() {}
 
     public static void run() {
         VisitsForWeek visitsForWeek = IOUtils.readWeeklyVisits(InputFilePath.WEEK_STATISTICS);
 
-        EnumMap<DayOfWeek, Double> nonPrivateVariance = getNonPrivateVariance(visitsForWeek);
-        EnumMap<DayOfWeek, Double> privateVariance = getPrivateVariance(visitsForWeek);
+        EnumMap<DayOfWeek, Double> nonPrivateSD = getNonPrivateSD(visitsForWeek);
+        EnumMap<DayOfWeek, Double> privateSD = getPrivateSD(visitsForWeek);
 
 
 
-        IOUtils.writeVariancesPerDayOfWeek(nonPrivateVariance, NON_PRIVATE_OUTPUT);
-        IOUtils.writeVariancesPerDayOfWeek(privateVariance, PRIVATE_OUTPUT);
+        IOUtils.writeStandardDeviationPerDayOfWeek(nonPrivateSD, NON_PRIVATE_OUTPUT);
+        IOUtils.writeStandardDeviationPerDayOfWeek(privateSD, PRIVATE_OUTPUT);
     }
 
-    private static EnumMap<DayOfWeek, Double> getNonPrivateVariance(VisitsForWeek visits) {
-        EnumMap<DayOfWeek, Double> variancePerDay = new EnumMap<>(DayOfWeek.class);
+    private static EnumMap<DayOfWeek, Double> getNonPrivateSD(VisitsForWeek visits) {
+        EnumMap<DayOfWeek, Double> SDPerDay = new EnumMap<>(DayOfWeek.class);
         Arrays.stream(DayOfWeek.values()).forEach(d ->
-                variancePerDay.put(d, Calculator.calSpentVariance(visits.getVisitsForDay(d))));
-        return variancePerDay;
+                SDPerDay.put(d, Math.sqrt(Calculator.calSpentVariance(visits.getVisitsForDay(d)))));
+        return SDPerDay;
     }
 
-    private static EnumMap<DayOfWeek, Double> getPrivateVariance(VisitsForWeek visits) {
+    private static EnumMap<DayOfWeek, Double> getPrivateSD(VisitsForWeek visits) {
         //Strat timer
         Stopwatch watch = Stopwatch.createStarted();
 
@@ -61,8 +58,8 @@ public class CalculateBoundedVariance {
                 ContributionBoundingUtils.boundContributedDays(visits, MAX_CONTRIBUTED_DAYS);
 
         for (DayOfWeek d : DayOfWeek.values()) {
-            BoundedVariance dpVariance =
-                    BoundedVariance.builder()
+            StandardDeviation SD =
+                    StandardDeviation.builder()
                             .epsilon(LN_3)
                             .maxPartitionsContributed(MAX_CONTRIBUTED_DAYS)
                             .maxContributionsPerPartition(MAX_CONTRIBUTED_TIMES_PER_DAY)
@@ -71,10 +68,10 @@ public class CalculateBoundedVariance {
                             .build();
 
             for (Visit v : boundedVisits.getVisitsForDay(d)) {
-                dpVariance.addEntry(v.eurosSpent());
+                SD.addEntry(v.eurosSpent());
             }
 
-            privateVariancePerDay.put(d, dpVariance.computeResult());
+            privateVariancePerDay.put(d, SD.computeResult());
         }
 
         //Write timer to file

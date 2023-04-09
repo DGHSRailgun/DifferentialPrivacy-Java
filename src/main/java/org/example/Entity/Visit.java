@@ -10,7 +10,7 @@ import java.time.LocalTime;
 public abstract class Visit {
 
   public static Visit create(
-      String visitorId, LocalTime entryTime, int minutesSpent, int eurosSpent, DayOfWeek day) {
+      String visitorId, LocalTime entryTime, int minutesSpent, Double eurosSpent, DayOfWeek day) {
     return new AutoValue_Visit(visitorId, entryTime, minutesSpent, eurosSpent, day);
   }
 
@@ -20,7 +20,7 @@ public abstract class Visit {
 
   public abstract int minutesSpent();
 
-  public abstract int eurosSpent();
+  public abstract Double eurosSpent();
 
   public abstract DayOfWeek day();
 }

@@ -1,5 +1,6 @@
 package org.example.Scenarios;
 
+import com.google.common.base.Stopwatch;
 import com.google.privacy.differentialprivacy.BoundedSum;
 import org.example.Entity.Visit;
 import org.example.Entity.VisitsForWeek;
@@ -9,6 +10,7 @@ import org.example.Utils.InputFilePath;
 
 import java.time.DayOfWeek;
 import java.util.EnumMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Reads weekly visits from {@link InputFilePath#WEEK_STATISTICS}, calculates the
@@ -65,6 +67,9 @@ public class SumRevenuePerDay {
 
   /** Returns total anonymized revenue for each day of the week. */
   private static EnumMap<DayOfWeek, Integer> getPrivateSums(VisitsForWeek visits) {
+    //Strat timer
+    Stopwatch watch = Stopwatch.createStarted();
+
     EnumMap<DayOfWeek, Integer> privateSumsPerDay = new EnumMap<>(DayOfWeek.class);
 
     // Pre-process the data set: limit the number of visits to MAX_VISITS_PER_WEEK
@@ -95,6 +100,9 @@ public class SumRevenuePerDay {
 
       privateSumsPerDay.put(d, (int) dpSum.computeResult());
     }
+    //Write timer to file
+    IOUtils.WriteAddNoiseTimer(String.valueOf(watch.stop().elapsed(TimeUnit.MILLISECONDS)), "SUM_REVENUE_PER_DAY");
+
 
     return privateSumsPerDay;
   }

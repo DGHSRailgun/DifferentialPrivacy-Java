@@ -1,5 +1,6 @@
 package org.example.Scenarios;
 
+import com.google.common.base.Stopwatch;
 import com.google.privacy.differentialprivacy.BoundedSum;
 import org.example.Entity.Visit;
 import org.example.Entity.VisitsForWeek;
@@ -11,6 +12,7 @@ import java.time.DayOfWeek;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Similar to {@link SumRevenuePerDay} but a visitor may enter the restaurant multiple times a day.
@@ -55,6 +57,8 @@ public class SumRevenuePerDayWithPreAggregation {
   /** Returns total anonymized revenue for each day of the week. */
   private static EnumMap<DayOfWeek, Integer> getPrivateSums(VisitsForWeek visits) {
     EnumMap<DayOfWeek, Integer> privateSumsPerDay = new EnumMap<>(DayOfWeek.class);
+    //Strat timer
+    Stopwatch watch = Stopwatch.createStarted();
 
     // Pre-process the data set: limit the number of visits to MAX_CONTRIBUTED_DAYS
     // per visitorId.
@@ -79,23 +83,28 @@ public class SumRevenuePerDayWithPreAggregation {
               .build();
 
       // For each visitor, pre-aggregate their spending for the day.
-      Map<String, Integer> visitorToDaySpending = new HashMap<>();
+      Map<String, Double> visitorToDaySpending = new HashMap<>();
       for (Visit v : boundedVisits.getVisitsForDay(d)) {
         String visitorId = v.visitorId();
         if (visitorToDaySpending.containsKey(visitorId)) {
-          int newAmount = visitorToDaySpending.get(visitorId) + v.eurosSpent();
+          Double newAmount = visitorToDaySpending.get(visitorId) + v.eurosSpent();
           visitorToDaySpending.put(visitorId, newAmount);
         } else {
           visitorToDaySpending.put(visitorId, v.eurosSpent());
         }
       }
 
-      for (Integer visitorSpending : visitorToDaySpending.values()) {
+      for (Double visitorSpending : visitorToDaySpending.values()) {
         dpSum.addEntry(visitorSpending);
       }
 
       privateSumsPerDay.put(d, (int) dpSum.computeResult());
     }
+
+    //Write timer to file
+    IOUtils.WriteAddNoiseTimer(String.valueOf(watch.stop().elapsed(TimeUnit.MILLISECONDS)), "SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION");
+
+
 
     return privateSumsPerDay;
   }

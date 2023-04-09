@@ -2,7 +2,9 @@ package org.example.Utils;
 
 import org.example.Entity.Visit;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Calculator {
 
@@ -37,6 +39,19 @@ public class Calculator {
         return ave;
 
     }
+
+    //Find by rank
+    public static double findByRank(Collection<Visit> visits, double rank) {
+        List<Visit> visitList = new ArrayList<>(visits);
+        for (Visit v: visitList){
+            System.out.println(v.eurosSpent());
+        }
+
+        return (1-rank) * visitList.get(0).eurosSpent() + rank * visitList.get(visitList.size() - 1).eurosSpent();
+
+    }
+
+
 
 
 }

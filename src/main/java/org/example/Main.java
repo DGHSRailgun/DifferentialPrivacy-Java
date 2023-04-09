@@ -1,16 +1,22 @@
 package org.example;
 
+import org.example.App.DPApp;
 import org.example.Scenarios.*;
 
 import java.util.Arrays;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception{
     if (args == null || args.length == 0) {
-      throw new IllegalArgumentException(
-          "The scenario should be set as a first argument. "
-              + "Accepted values: "
-              + Arrays.toString(Scenario.values()));
+//      throw new IllegalArgumentException(
+//          "The scenario should be set as a first argument. "
+//              + "Accepted values: "
+//              + Arrays.toString(Scenario.values()));
+
+      DPApp app = new DPApp();
+      app.buildConnection();
+      app.runApp();
+
     }
 
     Scenario scenario = Scenario.valueOf(args[0]);
@@ -33,6 +39,13 @@ public class Main {
         break;
       case CAL_MEAN_PER_DAY:
         CalculateBoundedMean.run();
+        break;
+      case CAL_STANDARD_DEVIATION:
+        CalculateStandardDeviation.run();
+        break;
+      case CAL_BOUNDED_QUANTILES:
+        CalculateBoundedQuantiles.run();
+        break;
     }
   }
 
@@ -44,6 +57,8 @@ public class Main {
     SUM_REVENUE_PER_DAY,
     SUM_REVENUE_PER_DAY_WITH_PREAGGREGATION,
     CAL_VARIANCE_PER_DAY,
-    CAL_MEAN_PER_DAY
+    CAL_MEAN_PER_DAY,
+    CAL_STANDARD_DEVIATION,
+    CAL_BOUNDED_QUANTILES
   }
 }
